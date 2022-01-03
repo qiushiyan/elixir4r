@@ -1,0 +1,16 @@
+Package: elixir4r
+Title: Run Elixir in R Markdown
+Version: 0.0.0.9000
+Authors@R: 
+    person(c("Qiushi", "Yan"), email = "qiushi.yann@gmail.com", role = c("aut", "cre"))
+Description: 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    knitr
+Suggests: 
+    rmarkdown
+URL: https://github.com/qiushiyan/elixir4r
+BugReports: https://github.com/qiushiyan/elixir4r/issues
