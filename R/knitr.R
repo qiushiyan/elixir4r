@@ -1,3 +1,6 @@
+#' Check if elixir exists
+#'
+#' @export
 has_elixir <- function() {
   tryCatch({
     system("elixir -v", intern = TRUE)
@@ -35,6 +38,9 @@ append_print_to_last_line <- function(code) {
   code
 }
 
+#' elixir engine for knitr
+#'
+#' @export
 knitr_elixir_engine <- function() {
   function(options) {
     if (options$eval) {
@@ -46,6 +52,7 @@ knitr_elixir_engine <- function() {
   }
 }
 
+#' @export
 register_elixir_knitr_engine <- function() {
   if (!has_elixir()) {
     warning("No elixir executable found, see installation instructions at https://elixir-lang.org/install.html and make sure it's in PATH")

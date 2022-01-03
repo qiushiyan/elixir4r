@@ -28,18 +28,9 @@ Insert an `elixir` chunk
     IO.puts("hello world from #{year}/#{month}/#{day} #{hour} o'clock") 
     ```
 
-``` elixir
-IO.puts({1, 2, 3})
-```
-
-    #> ** (Protocol.UndefinedError) protocol String.Chars not implemented for {1, 2, 3} of type Tuple
-    #>     (elixir 1.13.1) lib/string/chars.ex:3: String.Chars.impl_for!/1
-    #>     (elixir 1.13.1) lib/string/chars.ex:22: String.Chars.to_string/1
-    #>     (elixir 1.13.1) lib/io.ex:724: IO.puts/2
-
 This yields
 
-    #> hello world from 2022/1/2 21 o'clock
+    #> hello world from 2022/1/2 22 o'clock
 
 The last line of the code block gets automatically printed by
 `IO.inspect`
