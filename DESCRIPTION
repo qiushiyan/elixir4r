@@ -1,9 +1,9 @@
 Package: elixir4r
 Title: Run Elixir in R Markdown
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(c("Qiushi", "Yan"), email = "qiushi.yann@gmail.com", role = c("aut", "cre"))
-Description: 
+Description: simple elixir engine for knitr
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
