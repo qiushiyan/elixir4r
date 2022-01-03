@@ -1,0 +1,25 @@
+---
+title: "Run elixir in R Markdown"
+---
+
+
+```{r}
+library(elixir4r)
+```
+
+
+
+```{elixir}
+{{year, month, day}, {hour, _, _}} = :calendar.local_time()
+IO.puts("hello world from #{year}/#{month}/#{day} #{hour} o'clock") 
+```
+
+
+```{elixir, eval = FALSE}
+# skip evaluation 
+IO.puts("I am not evaluated.")
+```
+
+
+
+

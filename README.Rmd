@@ -1,0 +1,61 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# elixir4r (WIP)
+
+The package provides R interface to [elixir](https://elixir-lang.org/)
+
+## Installation
+
+You can install the development version of elixir4r via: 
+
+``` r
+devtools::install_github("enixam/elixir4r")
+```
+
+## Example
+
+First load the package
+
+```{r example}
+library(elixir4r)
+```
+
+Insert an `elixir` chunk 
+
+````
+```{elixir}`r ''`
+{{year, month, day}, {hour, _, _}} = :calendar.local_time()
+IO.puts("hello world from #{year}/#{month}/#{day} #{hour} o'clock") 
+```
+````
+
+
+This yields 
+
+```{elixir, echo = FALSE}
+{{year, month, day}, {hour, _, _}} = :calendar.local_time()
+
+IO.puts("hello world from #{year}/#{month}/#{day} #{hour} o'clock")
+```
+
+
+The last line of the code block gets automatically printed by `IO.inspect`
+
+```{elixir}
+m = %{name: "elixir", creator: "José Valim", status: :nice}
+m
+```
+
+
