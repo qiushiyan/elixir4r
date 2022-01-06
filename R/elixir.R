@@ -17,6 +17,7 @@ ex_eval <- function(code) {
 #' @param file file path
 #' @param append_print boolean, if IO.inpsect last line
 #' @importFrom xfun read_utf8
+#' @export
 ex_run <- function(file, append_print = FALSE) {
   ensure_elixir()
 

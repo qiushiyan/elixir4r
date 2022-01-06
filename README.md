@@ -21,6 +21,37 @@ First load the package
 library(elixir4r)
 ```
 
+### Interfaces
+
+Evaluate inline elixir code
+
+``` r
+ex_eval("
+        defmodule Test do
+          def main, do: IO.puts(:ok)
+        end 
+        
+        Test.main()
+        ")
+```
+
+    #> [1] "ok"
+
+Run `.exs` script
+
+``` r
+code <- "IO.write(['hello ', 'R'])"
+tmp <- tempfile()
+cat(code, file = tmp)
+ex_run(tmp)
+```
+
+    #> [1] "hello R"
+
+### R Markdown
+
+After `library`, elixir4r will register a custom knitr engine `elixir`.
+
 Insert an `elixir` chunk
 
     ```{elixir}
@@ -30,7 +61,11 @@ Insert an `elixir` chunk
 
 This yields
 
-    #> hello world from 2022/1/2 22 o'clock
+    #> ** (SyntaxError) /var/folders/r2/ycy8hp_54yd7bxc_0kyb5trm0000gn/T/RtmpVmCBg9/file7b063350fb78ex:3:1: syntax error before: 'IO'
+    #>     |
+    #>   3 | IO.puts("hello world from #{year}/#{month}/#{day} #{hour} o'clock"))
+    #>     | ^
+    #>     (elixir 1.13.1) lib/code.ex:1183: Code.require_file/2
 
 The last line of the code block gets automatically printed by
 `IO.inspect`
@@ -40,4 +75,8 @@ m = %{name: "elixir", creator: "José Valim", status: :nice}
 m
 ```
 
-    #> %{creator: "José Valim", name: "elixir", status: :nice}
+    #> ** (SyntaxError) /var/folders/r2/ycy8hp_54yd7bxc_0kyb5trm0000gn/T/RtmpVmCBg9/file7b069ad9d9aex:2:1: syntax error before: m
+    #>     |
+    #>   2 | m)
+    #>     | ^
+    #>     (elixir 1.13.1) lib/code.ex:1183: Code.require_file/2
