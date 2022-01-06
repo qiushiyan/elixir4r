@@ -1,12 +1,15 @@
 ---
 title: "Run elixir in R Markdown"
+output:
+  html_document: default
+  pdf_document: default
+  github_document: default
 ---
 
 
 ```{r}
 library(elixir4r)
 ```
-
 
 
 ```{elixir}
