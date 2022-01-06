@@ -61,11 +61,7 @@ Insert an `elixir` chunk
 
 This yields
 
-    #> ** (SyntaxError) /var/folders/r2/ycy8hp_54yd7bxc_0kyb5trm0000gn/T/RtmpVmCBg9/file7b063350fb78ex:3:1: syntax error before: 'IO'
-    #>     |
-    #>   3 | IO.puts("hello world from #{year}/#{month}/#{day} #{hour} o'clock"))
-    #>     | ^
-    #>     (elixir 1.13.1) lib/code.ex:1183: Code.require_file/2
+    #> hello world from 2022/1/5 18 o'clock
 
 The last line of the code block gets automatically printed by
 `IO.inspect`
@@ -75,8 +71,4 @@ m = %{name: "elixir", creator: "José Valim", status: :nice}
 m
 ```
 
-    #> ** (SyntaxError) /var/folders/r2/ycy8hp_54yd7bxc_0kyb5trm0000gn/T/RtmpVmCBg9/file7b069ad9d9aex:2:1: syntax error before: m
-    #>     |
-    #>   2 | m)
-    #>     | ^
-    #>     (elixir 1.13.1) lib/code.ex:1183: Code.require_file/2
+    #> %{creator: "José Valim", name: "elixir", status: :nice}
