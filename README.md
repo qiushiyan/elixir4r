@@ -27,12 +27,12 @@ Evaluate inline elixir code
 
 ``` r
 ex_eval("
-        defmodule Test do
-          def main, do: IO.puts(:ok)
-        end 
-        
-        Test.main()
-        ")
+defmodule Test do
+  def main, do: IO.puts(:ok)
+end 
+
+Test.main()
+")
 ```
 
     #> [1] "ok"

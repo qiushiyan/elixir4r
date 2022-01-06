@@ -28,7 +28,7 @@ devtools::install_github("enixam/elixir4r")
 
 First load the package
 
-```{r example}
+```{r}
 library(elixir4r)
 ```
 
@@ -38,12 +38,12 @@ Evaluate inline elixir code
 
 ```{r}
 ex_eval("
-        defmodule Test do
-          def main, do: IO.puts(:ok)
-        end 
-        
-        Test.main()
-        ")
+defmodule Test do
+  def main, do: IO.puts(:ok)
+end 
+
+Test.main()
+")
 ```
 
 Run `.exs` script 

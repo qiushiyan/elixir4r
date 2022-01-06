@@ -26,10 +26,9 @@ ex_run <- function(file, append_print = FALSE) {
 }
 
 run_elixir <- function(code, append_print = TRUE) {
-  tmp_file <- tempfile(fileext = "ex")
-
-  code <- paste(code, collapse = "\n")
+  tmp_file <- tempfile(fileext = "exs")
   if (append_print) code <- append_print_to_last_line(code)
+  code <- paste(code, collapse = "\n")
   cat(code, file = tmp_file, sep = "\n")
 
   out <- tryCatch({
